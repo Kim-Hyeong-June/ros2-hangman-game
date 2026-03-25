@@ -42,6 +42,24 @@ Action, Service, Topic을 활용하여 **비동기 분산 시스템 구조**를 
 - DDS 기반 통신 구조
 
 ---
+## 📸 Demo
+
+<p align="center">
+  <img src="images/hangman-demo.png" width="600"/>
+</p>
+
+---
+
+## 🏗 Architecture
+<p align="center">
+  <img src="images/hangman_architecture.drawio.png" width="600"/>
+</p>
+
+### 🔧 Design Rationale
+- **Topic (input_letter)**: 사용자 입력은 비동기 스트림이므로 Topic으로 처리
+- **Service (WordService)**: 알파벳 검증은 즉각적인 응답이 필요하므로 Service 사용
+- **Action Server**: 게임은 장시간 상태를 유지하므로 Action으로 관리
+---
 
 ## 🚀 How to Run
 
@@ -51,3 +69,9 @@ Action, Service, Topic을 활용하여 **비동기 분산 시스템 구조**를 
 cd ~/hangman_ws
 colcon build --symlink-install
 source install/setup.bash
+```
+
+### 2️⃣ Run
+```bash
+ros2 launch hangman_game hangman.launch.py
+```
