@@ -1,0 +1,12 @@
+# goal
+string start
+
+---
+# result
+bool success
+string message
+
+---
+# feedback
+string current_word
+int32 remaining_attempts
